@@ -17,7 +17,9 @@ idProfile INT NOT NULL AUTO_INCREMENT,
 pseudo VARCHAR(50),
 MDP VARCHAR(50),
 grade VARCHAR(50),
+URLimageProfile VARCHAR(50),
 PRIMARY KEY (idProfile)
+
 );
 
 CREATE TABLE Sujet
@@ -37,6 +39,7 @@ idMessage INT NOT NULL AUTO_INCREMENT,
 text TEXT,
 likeMessage INT,
 dislikeMessage INT,
+URLimage VARCHAR(50),
 idSujet INT,
 PRIMARY KEY (idMessage)
 );
