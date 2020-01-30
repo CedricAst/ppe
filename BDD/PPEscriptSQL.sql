@@ -11,7 +11,7 @@ idProfile INT,
 PRIMARY KEY (idBannit)
 );
 
-CREATE TABLE Profile 
+CREATE TABLE Utilisateur
 (
 idProfile INT NOT NULL AUTO_INCREMENT,
 pseudo VARCHAR(50),
