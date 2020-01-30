@@ -1,0 +1,33 @@
+CREATE TABLE Bannit 
+(
+idBannit INT NOT NULL AUTO_INCREMENT,
+pseudoBannit VARCHAR(50),
+justification VARCHAR(50),
+PRIMARY KEY (idBannit)
+);
+
+CREATE TABLE Profile 
+(
+idProfile INT NOT NULL AUTO_INCREMENT,
+pseudo VARCHAR(50),
+MDP VARCHAR(50),
+grade VARCHAR(50),
+PRIMARY KEY (idProfile)
+);
+
+CREATE TABLE Sujet
+(
+idSujet INT NOT NULL AUTO_INCREMENT,
+nomSujet VARCHAR(50),
+ilike INT,
+idislike INT,
+text TEXT,
+PRIMARY KEY (idSujet)
+);
+CREATE Message 
+(
+idMessage INT NOT NULL AUTO_INCREMENT,
+text TEXT,
+ilike INT ,
+idislike INT ,
+);
