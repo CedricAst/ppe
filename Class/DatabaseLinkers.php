@@ -26,7 +26,50 @@ class DatabaseLinkers {
 		}
                 return DatabaseLinkers::$PDO;
 	}    
+    public static function getUser($User,$Mdp)
+     {
+         $CurrentUser=new Utilisateur();
+         $connex=DatabaseLinkers::getconnexion();
+         $state=$connex->prepare("SELECT * FROM Profile WHERE pseudo=? AND MDP=? ");
+         $state->bindParam(1,$User);
+         $state->bindParam(2,$Mdp);
 
-     
+         $state->execute();
+         $resultats = $state->fetchAll();
+         foreach ($resultats as $lineResultat) 
+         {
+             $CurrentUserUser->setURLimageProfile($lineResultat["$URLimageProfile"]);
+             $CurrentUserUser->setMDP($Mdp);
+             $CurrentUserUser->setgrade($lineResultat["grade"]);
+             $CurrentUserUser->setidProfile($lineResultat["$idProfile"]);
+             $CurrentUserUser->setpseudo($User);
+
+         }
+         return $CurrentUserr;
+         
+         
+     }
+    public static function  newAccount($User,$Mdp)
+    {
+        $CurrentUser=new Utilisateur();
+        $connex= DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("INSERT INTO Utilisateur(idProfile,pseudo,MDP,grade,URLimageProfile)VALUES(NULL,?,?,?,NULL)");
+        $state->bindParam(1,$User);
+        $state->bindParam(2,$Mdp);
+        $state->bindParam(3,"User");
+        $state->execute();
+        $resultats = $state->fetchAll();
+         foreach ($resultats as $lineResultat) 
+         {
+             $CurrentUserUser->setURLimageProfile($lineResultat["$URLimageProfile"]);
+             $CurrentUserUser->setMDP($Mdp);
+             $CurrentUserUser->setgrade($lineResultat["grade"]);
+             $CurrentUserUser->setidProfile($lineResultat["$idProfile"]);
+             $CurrentUserUser->setpseudo($User);
+
+         }
+         return $CurrentUserr;
+                
+    }
        
  }
