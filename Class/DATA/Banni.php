@@ -26,6 +26,14 @@ class Banni
 			return $this->_idProfile;
 	}
 	
+		}
+	function __construct($idBannit, $pseudoBannit, $justification, $idProfile) {
+            $this->idBannit = $idBannit;
+            $this->pseudoBannit = $pseudoBannit;
+            $this->justification = $justification;
+            $this->idProfile = $idProfile;
+        }
+
 	
 }
 ?>
