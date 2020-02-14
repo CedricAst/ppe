@@ -55,5 +55,14 @@ class Utilisateur
 	{
 		$this->_URLimageProfile= $URLimageProfile;
 	}
+	
+	        function __construct($idProfile, $pseudo, $MDP, $grade, $URLimageProfile) {
+            $this->idProfile = $idProfile;
+            $this->pseudo = $pseudo;
+            $this->MDP = $MDP;
+            $this->grade = $grade;
+            $this->URLimageProfile = $URLimageProfile;
+        }
+
 }
 ?>

@@ -47,5 +47,21 @@ class Messsage
     function setURLimage($URLimage) {
         $this->URLimage = $URLimage;
     }
+	    function getIdSujet() {
+        return $this->idSujet;
+    }
+
+    function setIdSujet($idSujet) {
+        $this->idSujet = $idSujet;
+    }
+
+    function __construct($idMessage, $text, $likeMessage, $dislikeMessage, $URLimage, $idSujet) {
+        $this->idMessage = $idMessage;
+        $this->text = $text;
+        $this->likeMessage = $likeMessage;
+        $this->dislikeMessage = $dislikeMessage;
+        $this->URLimage = $URLimage;
+        $this->idSujet = $idSujet;
+    }
 }
 ?>
