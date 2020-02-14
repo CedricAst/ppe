@@ -7,7 +7,9 @@
         <title>Redout</title>
     </head>
     <body>
-        <div class="header">
+        <div class="footer">   
+            <div>© <?php echo date("Y"); ?> Redout</div> 
+            <div>redout@gmail.com</div> 
         </div>
 </html>
 
