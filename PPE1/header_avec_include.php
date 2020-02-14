@@ -5,7 +5,7 @@
 		<title>REDOUT</title>
         <link rel="icon" type="image/png" href="image/logo.png" />
         <link rel="stylesheet" type="text/css" href="css/<?php echo $page?>.css" media="all"/>
-		<div class="head"
+		<div class="head">
 		        <form method="post" action="index.php" name="login_form" class="div_connexion">
 			<div class="fieldset_connexion">
 				<div>
