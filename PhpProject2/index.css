@@ -1,0 +1,54 @@
+.block-general
+{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 510px;
+    background-color: red;
+}
+.blockBannière
+{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    height: 22%;
+}
+.image-Profil
+{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    background-color: beige;
+}
+.Pseudo
+{
+    display: flex;
+    background-color: aquamarine;
+    width: 29%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 44%;
+}
+.block-generail-text
+{
+    display: flex;
+    height: 100%;
+}
+.zonetexte
+{
+    display: flex;
+    width: 92%;
+    height: 90%;
+    background-color: black;
+    margin: auto;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 févr. 2020, 08:33:14
+    Author     : utilisateur
+*/
+
