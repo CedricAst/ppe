@@ -7,7 +7,7 @@ class Sujet
 	private $dislikeSujet;
 	private $text;
 	private $URL;
-    private $idProfile;    
+        private $idProfile;    
 	    function getIdSujet() {
         return $this->idSujet;
     }

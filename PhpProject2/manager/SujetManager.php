@@ -1,6 +1,6 @@
 <?php
- include_once("Sujet.php");
- include_once("DatabaseLinkers.php");
+ include_once('Data/Sujet.php');
+ include_once('DatabaseLinkers.php');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
