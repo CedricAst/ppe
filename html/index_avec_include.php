@@ -3,7 +3,6 @@
 <?php
 	$page="index";
     include("header.php");
-	
 ?>
 <html>
 

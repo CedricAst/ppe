@@ -58,14 +58,14 @@ FOREIGN KEY (idSujet)
 REFERENCES Sujet(idSujet);
 <<<<<<< HEAD
 
-INSERT INTO Sujet(idSujet,nomSujet,likeSujet,dislikeSujet,text,idProfile)
+INSERT INTO Sujet(idSujet,nomSujet,likeSujet,dislikeSujet,text,idUtilisateur)
 VALUES(1,"test1",10,2,"dum sodales, augue velit cursus nu",1),
 (2,"test2",5,2,"dum sodales, augue velit cursus nu",1),
 (3,"test3",19,4,"dum sodales,sdfhbhklf<sksdjkbbjksbjkmbjksjmk augue velit cursus nu",2),
 (4,"test4",1340,289,"dum sefuomjksefjsefmjkssjsodales, augue velit cursus nu",3),
 (5,"test5",1093,42,"dum ssduilsdjksdjsdjljlmsdfmjisrfmjilwsdfjklssdfodales, augue velit cursus nu",2);
 
-INSERT INTO Utilisateur(idProfile,pseudo,MDP,grade,URLimageProfile)
+INSERT INTO Utilisateur(idUtilisateur,pseudo,MDP,grade,URLimageProfile)
 VALUES(1,"CCLR","azerty123","Utlisateur","inconnue"),
 (2,"Mickey","zerty123","Utlisateur","inconnue"),
 (3,"pickwii","123","Utlisateur","inconnue"),

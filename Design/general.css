@@ -8,20 +8,18 @@ body
 
 .page
 {
-    background: linear-gradient(#3f3fec, white);
+    background: black;
 }
 
 .filsactu
 {
-    background: linear-gradient(#f2ebeb, #9699a5);
+    background: blue;
     height : 100%;
     width: 750px;
     text-align: center;
     margin-left: auto;
     margin-right : auto;
     border : 1px groove black;
-    margin-top: 5%;
-    border-radius: 10px;
 }
 
 .message
@@ -35,7 +33,6 @@ body
     border-spacing: 5px;
     margin-top : 10px;
     margin-bottom: 8%;
-    border-radius: 10px;
 }
 
 .useraccount
@@ -92,11 +89,8 @@ body
     margin-left : 10%;
     width : 30%;
     height : 5%;
-    background-color: white;
-    border : 1px groove black;
     margin-bottom: 1%;
     margin-top : 5%;
-    border-radius: 10px;
 }
 
 .search 
@@ -110,6 +104,5 @@ body
     margin-bottom: 1%;
     margin-left : 10px;
     margin-top: 5%;
-    border-radius: 10px;
 }
 

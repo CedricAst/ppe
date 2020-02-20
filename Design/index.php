@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,7 +17,7 @@ and open the template in the editor.
                         <img class="logo" src="image/logo.png" alt=""/>
                     </div>
                     <div class="login">
-                        <h1>Login</h1>
+                        <h1>REDOUT</h1>
                         <form action="connex.php" method="post">                           
                                 <i class="fas fa-user"></i>                    
                                 <input type="text" name="username" placeholder="Username" id="username" required>
@@ -40,10 +33,21 @@ and open the template in the editor.
             <div class="filsactu">
                 <div class="container-blocks">
                     <div class="input">
-                        <label> Input </label>
-                    </div>
-                    <div class="search">
-                        <label> Rechercher </label>
+                        <label> 
+							
+							<form action="authenticate.php" method="post">
+							<label for="MDP">
+							<i class="fas fa-lock"></i>
+							</label>
+							<input type="text" name="MDP" placeholder="Rechercher" id="Rechercher" required>
+							<label>
+							<input type="submit" value="Rechercher">
+							</label>	
+							</form>
+
+
+
+						</label>
                     </div>
                 </div>
                 <div class="message">                       
@@ -60,14 +64,10 @@ and open the template in the editor.
                             </div>                               
                         </div>
                         <div class="text">  
-                            <div class="sujet">
-                                <?php>                                   
-                                    for ($compteur =0; $compteur.sizeof($tab); $compteur++)
-                                    {
-                                        echo $tab($compteur);
-                                    }
-                                <?>
-                            </div>
+						<label>
+							
+							
+						</label>
                         </div>
                     </div>
                 </div>
