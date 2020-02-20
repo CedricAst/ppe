@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/wamp64/www/PhpProject2/manager/SujetManager.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/manager/MessageManager.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/Data/Utilisateur.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/manager/UtilisateurManager.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/Data/Message.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/DatabaseLinkers.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/index.php</file>
+            <file>file:/C:/wamp64/www/PhpProject2/Data/Sujet.php</file>
+        </group>
     </open-files>
 </project-private>

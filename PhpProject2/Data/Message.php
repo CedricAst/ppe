@@ -7,7 +7,16 @@ class Messsage
     private $dislikeMessage;
     private $URLimage;
     private $idSujet;
-    function getIdSujet() {
+    private $idProfile;
+    function getIdProfile() {
+        return $this->idProfile;
+    }
+
+    function setIdProfile($idProfile) {
+        $this->idProfile = $idProfile;
+    }
+
+        function getIdSujet() {
         return $this->idSujet;
     }
 

@@ -8,24 +8,40 @@ class Banni
 	
 	public function getidBannit()
 	{
-			return $this->_idBannit;
+            return $this->_idBannit;
 	}
 		
-		public function getpseudoBannit()
+	public function getpseudoBannit()
 	{
-			return $this->_pseudoBannit;
+            return $this->_pseudoBannit;
 	}
 		
-		public function getjustification()
+	public function getjustification()
 	{
-			return $this->_justification;
+		return $this->_justification;
 	}
 		
-		public function getidProfile()
+	public function getidProfile()
 	{
-			return $this->_idProfile;
+		return $this->_idProfile;
 	}
 	
-	
+	function setIdBannit($idBannit) {
+            $this->idBannit = $idBannit;
+        }
+
+        function setPseudoBannit($pseudoBannit) {
+            $this->pseudoBannit = $pseudoBannit;
+        }
+
+        function setJustification($justification) {
+            $this->justification = $justification;
+        }
+
+        function setIdProfile($idProfile) {
+            $this->idProfile = $idProfile;
+        }
+
+
 }
 ?>
