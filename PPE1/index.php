@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<?php>
-    include ("Data/Sujet.php");
-    $tab = array[];
-    $tab [1] = new Sujet();
-    $tab [2] = new Sujet();
+<?php
+    include_once("SujetManager.php");
+    $tab=SujetManager:: findAllSujet();
     
-    $tab [1]-> setText("azertyuio");
-    $tab [1]-> setNomSujet("nom sujet 1");
-    $tab [1]-> setIdProfile(1);
-    $tab [1]-> setText("lhv");
-    $tab [1]-> setNomSujet("nom sujet 2");
-    $tab [1]-> setIdProfile(2);
-    $tab [1]-> setText("qjne");
-    $tab [1]-> setNomSujet("nom sujet 3");
-    $tab [1]-> setIdProfile(3);
-    
-    $tab [2]-> setText("ueahf");
-    $tab [2]-> setNomSujet("nom sujet 2.1");
-    $tab [2]-> setIdProfile(1);
-    $tab [2]-> setText("gaeef");
-    $tab [2]-> setNomSujet("nom sujet 2.2");
-    $tab [2]-> setIdProfile(2);
-    $tab [2]-> setText("efk");
-    $tab [2]-> setNomSujet("nom sujet 2.3");
-    $tab [2]-> setIdProfile(3);
-    
-<?>
+?>
+
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" type="image/png" href="images/icon.png">
         <link rel="stylesheet" type="text/css" href="general.css" media="all"> 
+        <link rel="stylesheet" type="text/css" href="header.css" media="all"> 
+        <link rel="stylesheet" type="text/css" href="header_login.css" media="all">
+        <link rel="stylesheet" type="text/css" href="footer.css" media="all">
         <title>Redout</title>
     </head>
     <body>
         <div class="page"> 
+            <div class="header">
+                <div class="container-blocks">
+                    <div class="cadre_logo">
+                        <img class="logo" src="image/logo.png" alt=""/>
+                    </div>
+                    <div class="login">
+                        <h1>Login</h1>
+                        <form action="connex.php" method="post">                           
+                                <i class="fas fa-user"></i>                    
+                                <input type="text" name="username" placeholder="Username" id="username" required>
+                                <label for="password">
+                                    <i class="fas fa-lock"></i>
+                                </label>
+                            <input type="password" name="password" placeholder="Password" id="password" required>
+                            <input type="submit" value="Login">
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div class="filsactu">
                 <div class="container-blocks">
                     <div class="input">
@@ -50,37 +46,41 @@ and open the template in the editor.
                         <label> Rechercher </label>
                     </div>
                 </div>
-                <div class="message">                       
-                    <div class="container-blocks">
-                        <div class="useraccount">                                                                  
-                            <div class="container">
-                                <div class="imageaccount">                      
+                <?php                                  
+                    for ($compteur =0; $compteur<sizeof($tab); $compteur++)
+                    {  ?> 
+                        <div class="message">                       
+                            <div class="container-blocks">
+                                <div class="useraccount">                                                                  
+                                    <div class="container">
+                                        <div class="imageaccount"> 
+                                            <?php  echo $tab[$compteur]->getURL();?>
+                                        </div>
+                                        <div class="pseudo">
+                                            <label> pseudo </label>
+                                        </div>
+                                        <label> Inscrit(e) le : </label>
+                                        <div class="stat">
+                                            <label> Like :<?php  echo $tab[$compteur]->getLikeSujet () ?> </label>                                          
+                                            <label> Dislike :<?php  echo $tab[$compteur]->getDislikeSujet () ?> </label>
+                                        </div>
+                                    </div>                               
                                 </div>
-                                <label> pseudo </label>
-                                <label> Inscrit(e) le : </label>
-                                <div class="stat">
-                                    <label> vue :  </label>
+                                <div class="text">  
+                                    <div class="sujet">  
+                                        <?php  echo $tab[$compteur]->getNomSujet () ?>
+                                    </div>
                                 </div>
-                            </div>                               
-                        </div>
-                        <div class="text">  
-                            <div class="sujet">
-                                <?php>                                   
-                                    for ($compteur =0; $compteur.sizeof($tab); $compteur++)
-                                    {
-                                        echo $tab($compteur);
-                                    }
-                                <?>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="message">  
-                    <label> message </label>
-                </div>
-                <div class="message">  
-                    <label> message </label>
-                </div>
+                <?php
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container-blocks">
+                <div>© 2020 Redout</div>                
             </div>
         </div>
     </body>

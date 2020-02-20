@@ -13,7 +13,7 @@
  */
 class DatabaseLinkers {
     //put your code here
-   	private static $URL="mysql:host=localhost;dbname=BDD_PPE1;charset=utf8";
+   	private static $URL="mysql:host=localhost;dbname=ppe1;charset=utf8";
 	private static $nomUtilisateurs="root";
 	private static $mdp="root";
 	private static $PDO;
