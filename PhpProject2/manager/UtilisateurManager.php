@@ -71,12 +71,13 @@ class UtilisateurManager {
      }
     public static function  newAccount($User,$Mdp)
     {
+        $User1="User";
         $CurrentUser=new Utilisateur();
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("INSERT INTO Utilisateur(pseudo,MDP,grade,URLimageProfile)VALUES(?,?,?,NULL)");
         $state->bindParam(1,$User);
         $state->bindParam(2,$Mdp);
-        $state->bindParam(3,"User");
+        $state->bindParam(3,$User1);
         $state->execute();
         
                 

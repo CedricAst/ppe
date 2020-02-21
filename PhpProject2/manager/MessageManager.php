@@ -16,7 +16,7 @@ class MessageManager {
     //put your code here
     public static function findMessage($idMessage)
     {
-        $Message=new Messsage();
+        $Message=new Message();
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("SELECT * FROM Message WHERE idMessage=?");
         $state->bindParam(1,$idMessage);
@@ -47,17 +47,25 @@ class MessageManager {
         }
         return $listMessage;
     }
-    public static function InsertMessage($MesssageE,$idSujet)
+    public static function InsertMessage($MesssageE)
     {
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("INSERT INTO Message(text,likeMessage,dislikeMessage,URLimage,idSujet,idProfile)
 VALUES (?,?,?,?,?,?)");
-        $state->bindParam(1,$MesssageE->getText());
-        $state->bindParam(2,$MesssageE->getLikeMessage());
-        $state->bindParam(3,$MesssageE->getDislikeMessage());
-        $state->bindParam(4,$MesssageE->getURLimage());
-        $state->bindParam(5,$idSujet);
-        $state->bindParam(6,$MesssageE->getIdProfile());
+        $Text=$MesssageE->getText();
+        $LikeMessage=$MesssageE->getLikeMessage();
+        $DislikeMessage=$MesssageE->getDislikeMessage();
+        $URLimage=$MesssageE->getURLimage();
+        $IdSujet=$MesssageE->getIdSujet();
+        $IdProfile=$MesssageE->getIdProfile();
+        
+        
+        $state->bindParam(1,$Text);
+        $state->bindParam(2,$LikeMessage);
+        $state->bindParam(3,$DislikeMessage);
+        $state->bindParam(4,$URLimage);
+        $state->bindParam(5,$IdSujet);
+        $state->bindParam(6,$IdProfile);
         $state->execute();
     }
   public static function DeleteMessage($idMessage)

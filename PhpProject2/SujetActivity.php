@@ -38,11 +38,11 @@ $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
            <div class="block-general">
             <div class="blockBannière">
                 <div class="image-Profil">
-                    <div class="block-like">
+                    <div class="canemarchepas">
                         <?php $user->getURLimageProfile();
                         echo $listMessage[$cpt]->getLikeMessage();?>
-                    </div>
-                    <div>
+                    </div >
+                    <div class="canemarchepas1">
                         <?php
                          echo "   ".$listMessage[$cpt]->getDislikeMessage();?>
                     </div>
@@ -51,13 +51,25 @@ $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
                     <?php 
                     echo $user->getpseudo(); ?>
                 </div>
+                <div>
+                    
+                </div>
             </div>
             <div class="block-generail-text">
                 <div class ="zonetexte">
                     <?php echo $listMessage[$cpt]->getText();?>
                 </div>
             </div>
-        </div> 
+        </div>
+    </div>
        <?php }?>
+        <div class="insertCommentaire">
+            <form class="" method="POST" action="insertCommentaire.php">
+        <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
+        <input type="hidden" name="idProfile" value="2">
+        <textarea class="commentarea" name="content" placeholder="Votre commentaire"></textarea>
+        <input  class="button" type="submit" value="Envoyer un Commentaire"/>
+        </form>
+        </div>
     </body>
 </html>

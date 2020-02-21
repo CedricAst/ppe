@@ -47,9 +47,12 @@ class BannitManager {
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("INSERT INTO Bannit(pseudoBannit,justification,idProfile)
 VALUES(?,?,?");
-         $state->bindParam(1,$Banniinsert->getpseudoBannit());
-         $state->bindParam(2,$Banniinsert->getjustification());
-         $state->bindParam(3,$Banniinsert->getidProfile());
+        $pseudoBannit=$Banniinsert->getpseudoBannit();
+        $justification=$Banniinsert->getjustification();
+        $idProfile=$Banniinsert->getidProfile();
+         $state->bindParam(1,$pseudoBannit);
+         $state->bindParam(2,$justification);
+         $state->bindParam(3,$idProfile);
          $state->execute();
     }
     public static function deban($idProfile)
