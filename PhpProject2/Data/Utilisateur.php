@@ -37,7 +37,7 @@ class Utilisateur
 		$this->_pseudo= $pseudo;
 	}
 	
-	public function setMDP($idProfile)
+	public function setMDP($MDP)
 	{
 		$this->_MDP= $MDP;
 	}

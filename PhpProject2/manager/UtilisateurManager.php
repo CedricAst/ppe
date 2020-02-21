@@ -1,6 +1,6 @@
 <?php
 include_once ("Data/Utilisateur.php");
-include_once ("DatabaseLinkers");
+include_once ("DatabaseLinkers.php");
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,13 +21,14 @@ class UtilisateurManager {
         $state=$connex->prepare("SELECT * FROM Utilisateur WHERE idProfile=?");
         $state->bindParam(1,$idProfile);
         $state->execute();
+        $resultas=$state->fetchAll();
         $resultasMessage=$resultas[0];
-        $Utilisateur->setIdMessage($idProfile);
+        $Utilisateur->setidProfile($idProfile);
         $Utilisateur->setidProfile($resultasMessage["idProfile"]);
         $Utilisateur->setpseudo($resultasMessage["pseudo"]);
         $Utilisateur->setMDP($resultasMessage["MDP"]);
         $Utilisateur->setURLimageProfile($resultasMessage["URLimageProfile"]);
-        $Utilisateur->setgrade($resultas["grade"]);
+        $Utilisateur->setgrade($resultasMessage["grade"]);
         return $Utilisateur;   
         
     }

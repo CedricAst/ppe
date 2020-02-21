@@ -16,9 +16,18 @@
 .image-Profil
 {
     display: flex;
+    flex-direction: column;
     width: 20%;
     height: 100%;
     background-color: beige;
+}
+.block-like
+{
+    display: flex;
+    text-align: center;
+    height: 59%;
+    background-color: brown;
+    width: 100%;
 }
 .Pseudo
 {
