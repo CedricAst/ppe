@@ -4,9 +4,15 @@ include_once ("Data/Sujet.php");
 include_once ("manager/MessageManager.php");
 include_once ("manager/UtilisateurManager.php");
 $idSujet=1;
+if(SujetManager::findSujet($idSujet)==NULL)
+{
+    header('Location: index.php');
+        exit;
+}
 $Sujet=SujetManager::findSujet($idSujet);
 $listMessage= MessageManager::findMessagetoSujet($idSujet);
 $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
+$test=1;
 ?>
 <html>
     <head>
@@ -22,6 +28,32 @@ $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
                 </div>
                 <div class="Pseudo">
                     <?php  echo $Users->getpseudo();?>
+                </div>
+                <div class="action">
+                  <?php if($test == $Users->getidProfile())
+                  {
+                  ?>
+                   <form class="" method="POST" action="insertCommentaire.php">
+                        <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
+                        <input type="hidden" name="Action" value="1">
+                        <input  class="button" type="submit" value="Supprimer"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
+                <div class="action">
+                  <?php if($test == $Users->getidProfile())
+                  {
+                  ?>
+                   <form class="" method="POST" action="insertCommentaire.php">
+                        <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
+                        <input type="hidden" name="Action" value="2">
+                        <input  class="button" type="submit" value="Modifier"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
                 </div>
             </div>
             <div class="block-generail-text">
@@ -51,8 +83,18 @@ $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
                     <?php 
                     echo $user->getpseudo(); ?>
                 </div>
-                <div>
-                    
+                <div class="action">
+                  <?php if($test == $listMessage[$cpt]->getIdProfile())
+                  {
+                  ?>
+                   <form class="" method="POST" action="insertCommentaire.php">
+                       <input type="hidden" name="idMessage" value="<?php echo $listMessage[$cpt]->getIdMessage() ?>">
+                        <input type="hidden" name="Action" value="2">
+                        <input  class="button" type="submit" value="Supprimer"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
                 </div>
             </div>
             <div class="block-generail-text">
@@ -67,7 +109,8 @@ $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
             <form class="" method="POST" action="insertCommentaire.php">
         <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
         <input type="hidden" name="idProfile" value="2">
-        <textarea class="commentarea" name="content" placeholder="Votre commentaire"></textarea>
+         <input type="hidden" name="Action" value="0">
+         <textarea class="commentarea" name="content" placeholder="Votre commentaire"><?php echo $Sujet->getText() ?></textarea>
         <input  class="button" type="submit" value="Envoyer un Commentaire"/>
         </form>
         </div>

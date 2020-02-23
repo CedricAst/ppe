@@ -22,6 +22,11 @@ class SujetManager {
         $state->bindParam(1,$idSujet);
         $state->execute();
         $resultas=$state->fetchAll();
+        if(count($resultas) == 0)
+        {
+            return NULL;
+        }else
+        {
         $resultasSujet=$resultas[0];
         $Sujet->setIdSujet($idSujet);
         $Sujet->setIdProfile($resultasSujet["idProfile"]);
@@ -29,8 +34,8 @@ class SujetManager {
         $Sujet->setLikeSujet($resultasSujet["likeSujet"]);
         $Sujet->setDislikeSujet($resultasSujet["dislikeSujet"]);
         $Sujet->setText($resultasSujet["text"]);
+        }
         return $Sujet;
-        
     }
     public static function findAllSujet()
     {
@@ -64,19 +69,23 @@ VALUES(?,?,?,?,?");
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("DELETE FROM Sujet WHERE idSujet=?");
         $state->bindParam(1,$idSujet);
+        $state->execute();
+        $state1=$connex->prepare("DELETE FROM Message WHERE idSujet=?");
+        $state1->bindParam(1,$idSujet);
+        $state1->execute();
     }
     public static function likeSujet($idSujet)
     {
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("UPDATE Sujet SET likeMessage=likeMessage+1 WHERE idSujet=?");
         $state->bindParam(1,$idSujet);
-        
+        $state->execute();
     }
     public static function dislikeSujet($idSujet)
     {
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("UPDATE Sujet SET dislikeMessage=dislikeMessage+1 WHERE idSujet=?");
         $state->bindParam(1,$idSujet);
-        
+        $state->execute();
     }
 }

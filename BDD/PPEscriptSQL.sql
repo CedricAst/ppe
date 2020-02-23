@@ -39,6 +39,7 @@ likeMessage INT,
 dislikeMessage INT,
 URLimage VARCHAR(50),
 idSujet INT,
+idProfile INT,
 PRIMARY KEY (idMessage)
 );
 
@@ -57,30 +58,27 @@ ADD CONSTRAINT Message_idSujet
 FOREIGN KEY (idSujet) 
 REFERENCES Sujet(idSujet);
 
+ALTER TABLE Message
+ADD CONSTRAINT Message_idProfile
+FOREIGN KEY (idProfile) REFERENCES Utilisateur(idProfile);
 
-INSERT INTO Sujet(idSujet,nomSujet,likeSujet,dislikeSujet,text,idUtilisateur)
+INSERT INTO Sujet(idSujet,nomSujet,likeSujet,dislikeSujet,text,idProfile)
 VALUES(1,"test1",10,2,"dum sodales, augue velit cursus nu",1),
 (2,"test2",5,2,"dum sodales, augue velit cursus nu",1),
 (3,"test3",19,4,"dum sodales,sdfhbhklf<sksdjkbbjksbjkmbjksjmk augue velit cursus nu",2),
 (4,"test4",1340,289,"dum sefuomjksefjsefmjkssjsodales, augue velit cursus nu",3),
 (5,"test5",1093,42,"dum ssduilsdjksdjsdjljlmsdfmjisrfmjilwsdfjklssdfodales, augue velit cursus nu",2);
 
-INSERT INTO Utilisateur(idUtilisateur,pseudo,MDP,grade,URLimageProfile)
+INSERT INTO Utilisateur(idProfile,pseudo,MDP,grade,URLimageProfile)
 VALUES(1,"CCLR","azerty123","Utlisateur","inconnue"),
 (2,"Mickey","zerty123","Utlisateur","inconnue"),
 (3,"pickwii","123","Utlisateur","inconnue"),
 (4,"EEEEE","EEEEE","Utlisateur","inconnue");
 
-INSERT INTO Message(idMessage,text,likeMessage,dislikeMessage,URLimage,idSujet)
-VALUES (1,"qsdfjùlsdfjùlwsvjlsdfjkl",4,56,"inconnue",1),
-(2,"uqiw<dqsuqsu",42,85,"inconnue",1),
-(3,"fmuhqsdiowsfviosdjiisdisdjisdjio",74,85,"inconnue",2),
-(4,"uqiw<dqsuqsu",42,85,"inconnue",2);
-
-
-
-
-
-
+INSERT INTO Message(idMessage,text,likeMessage,dislikeMessage,URLimage,idSujet,idProfile)
+VALUES (1,"qsdfjùlsdfjùlwsvjlsdfjkl",4,56,"inconnue",1,1),
+(2,"uqiw<dqsuqsu",42,85,"inconnue",1,2),
+(3,"fmuhqsdiowsfviosdjiisdisdjisdjio",74,85,"inconnue",2,3),
+(4,"uqiw<dqsuqsu",42,85,"inconnue",2,4);
 
 
