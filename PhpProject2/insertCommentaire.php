@@ -30,6 +30,18 @@ switch ($Action)
         header('Location: SujetActivity.php');
         exit;
     case 3:
-        break;
-        
+        $idSujet=$_POST["idSujet"];
+        $SujetA=SujetManager::findSujet($idSujet);
+        $SujetA->setNomSujet($_POST["nomSujet"]);
+        $SujetA->setText($_POST["content"]);
+        SujetManager::UpdateSujet($SujetA);
+        header('Location: SujetAcb tivity.php');
+        exit;
+    case 4:
+        $idMessage=$_POST["idMessage"];
+        $MessageA= MessageManager::findMessage($idMessage);
+        $MessageA->setText($_POST["content"]);
+        MessageManager::UpdateMessage($MessageA);   
+        header('Location: SujetActivity.php');
+        exit;
 }

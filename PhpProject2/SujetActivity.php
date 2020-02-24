@@ -21,6 +21,7 @@ $test=1;
         <link rel="stylesheet" type="text/css" href="index.css" media="all"/>
     </head>
     <body>
+        <h1><?php echo $Sujet->getNomSujet() ?></h1>
         <div class="block-general">
             <div class="blockBannière">
                 <div class="image-Profil">
@@ -46,9 +47,9 @@ $test=1;
                   <?php if($test == $Users->getidProfile())
                   {
                   ?>
-                   <form class="" method="POST" action="insertCommentaire.php">
+                    <form class="" method="POST" action="modifSM.php">
                         <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
-                        <input type="hidden" name="Action" value="2">
+                        <input type="hidden" name="Action" value="0">
                         <input  class="button" type="submit" value="Modifier"/>
                     </form>
                     <?php
@@ -96,6 +97,19 @@ $test=1;
                   }
                     ?>
                 </div>
+                <div class="action">
+                  <?php if($test == $listMessage[$cpt]->getIdProfile())
+                  {
+                  ?>
+                    <form class="" method="POST" action="modifSM.php">
+                       <input type="hidden" name="idMessage" value="<?php echo $listMessage[$cpt]->getIdMessage() ?>">
+                        <input type="hidden" name="Action" value="1">
+                        <input  class="button" type="submit" value="Modifier"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
             </div>
             <div class="block-generail-text">
                 <div class ="zonetexte">
@@ -114,5 +128,9 @@ $test=1;
         <input  class="button" type="submit" value="Envoyer un Commentaire"/>
         </form>
         </div>
+    <script src="ckeditor/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('content');
+        </script>
     </body>
 </html>

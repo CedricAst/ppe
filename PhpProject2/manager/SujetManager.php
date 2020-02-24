@@ -88,4 +88,16 @@ VALUES(?,?,?,?,?");
         $state->bindParam(1,$idSujet);
         $state->execute();
     }
+     public static function  UpdateSujet($SujetA)
+  {
+      $text=$SujetA->getText();
+      $nomSujet=$SujetA->getNomSujet();
+      $idSujet=$SujetA->getIdSujet();
+      $connex= DatabaseLinkers::getconnexion();
+      $state=$connex->prepare("UPDATE Sujet SET text=?,nomSujet=? WHERE idSujet=?");
+      $state->bindParam(1,$text);
+      $state->bindParam(2,$nomSujet);
+      $state->bindParam(3,$idSujet);
+      $state->execute();   
+  }
 }

@@ -75,15 +75,14 @@ VALUES (?,?,?,?,?,?)");
       $state->bindParam(1,$idMessage);
       $state->execute();
   }
-  public static function  UpdateMessage($MessageA,$idMessage)
+  public static function  UpdateMessage($MessageA)
   {
+      $text=$MessageA->getText();
+      $idMessage=$MessageA->getIdMessage();
       $connex= DatabaseLinkers::getconnexion();
-      $state=$connex->prepare("ALTER TABLE UPDATE Message SET text=?,likeMessage=?,dislikeMessage=?,URLimage=? WHERE idMessage=?");
-      $state->bindParam(1,$MessageA->getText());
-      $state->bindParam(2,$MessageA->getLikeMessage());
-      $state->bindParam(3,$MessageA->getDislikeMessage());
-      $state->bindParam(4,$MessageA->getURLimage());
-      $state->bindParam(5,$MessageA->getIdSujet());
+      $state=$connex->prepare("UPDATE Message SET text=? WHERE idMessage=?");
+      $state->bindParam(1,$text);
+      $state->bindParam(2,$idMessage);
       $state->execute();   
   }
 }
