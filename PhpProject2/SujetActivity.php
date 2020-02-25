@@ -10,9 +10,14 @@ if(SujetManager::findSujet($idSujet)==NULL)
         exit;
 }
 $Sujet=SujetManager::findSujet($idSujet);
-$listMessage= MessageManager::findMessagetoSujet($idSujet);
+$limit=5;
+$page=isset($_GET["page"]) ? $_GET["page"] :1;
+$start=($page-1)*$limit;
+$listMessage= MessageManager::findMessagetoSujet($idSujet,$start,$limit);
+$pages= MessageManager::findMessagetoSujetCount($idSujet);
 $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
 $test=1;
+
 ?>
 <html>
     <head>
@@ -22,6 +27,43 @@ $test=1;
     </head>
     <body>
         <h1><?php echo $Sujet->getNomSujet() ?></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="http://localhost/ppe/PhpProject2/SujetActivity.php?page=<?php if($page-1<1)
+                        {
+                            echo $page;
+                        }else
+                        {
+                            echo $page-1; 
+                        }
+                         ?>">
+                        <span>&laquo; Previous </span>
+                    </a>
+                </li>
+                <?php for($i =1; $i<= $pages; $i++)
+                {
+                ?>
+                <li>
+                    <a href="http://localhost/ppe/PhpProject2/SujetActivity.php?page=<?php echo $i ?>"><?php echo $i ?></a> 
+                </li>
+                <?php }?>
+                <li>
+                    <a href="http://localhost/ppe/PhpProject2/SujetActivity.php?page=<?php if($page+1>$pages)
+                        {
+                            echo $page;
+                        }else
+                        {
+                            echo $page+1; 
+                        }
+                         ?>">
+                        <span>&raquo;; Previous </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <?php if($page==1)
+        {?>
         <div class="block-general">
             <div class="blockBannière">
                 <div class="image-Profil">
@@ -57,13 +99,15 @@ $test=1;
                     ?>
                 </div>
             </div>
+       
             <div class="block-generail-text">
                 <div class ="zonetexte">
                     <?php echo $Sujet->getText();
                     echo $Sujet->getNomSujet()?>
                 </div>
             </div>
-        </div> 
+        </div>
+       <?php } ?>
        <?php for($cpt=0;$cpt<sizeof($listMessage);$cpt++)
         {
            $user=UtilisateurManager::findUser($listMessage[$cpt]->getIdProfile());

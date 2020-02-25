@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 510px;
+    height: auto;
     background-color: red;
 }
 .blockBannière
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: row;
     background-color: aqua;
-    height: 22%;
+    height: 91.96px;
 }
 .image-Profil
 {
@@ -81,15 +81,21 @@
 .block-generail-text
 {
     display: flex;
-    height: 100%;
+    height: auto;
+    padding: 8px;
 }
 .zonetexte
 {
     display: flex;
-    width: 92%;
-    height: 90%;
+    width: 100%;
     background-color: white;
-    margin: auto;
+    padding: 13px 0px;
+    overflow: hidden;
+    word-break:inherit;
+}
+p
+{
+  width: 600px
 }
 /*
 To change this license header, choose License Headers in Project Properties.

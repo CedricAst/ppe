@@ -32,11 +32,11 @@ class MessageManager {
         $Message->setIdProfile($resultasMessage["idProfile"]);
         return $Message;   
     }
-    public static function findMessagetoSujet($idSujet)
+    public static function findMessagetoSujet($idSujet,$limit,$limitS)
     {
         $listMessage=array();
         $connex= DatabaseLinkers::getconnexion();
-        $state=$connex->prepare("SELECT * FROM Message WHERE idSujet=?");
+        $state=$connex->prepare("SELECT * FROM Message WHERE idSujet=? LIMIT $limit,$limitS");
         $state->bindParam(1,$idSujet);
         $state->execute();
         $resultas=$state->fetchAll();
@@ -47,6 +47,18 @@ class MessageManager {
         }
         return $listMessage;
     }
+    public static function findMessagetoSujetCount($idSujet)
+    {
+        $connex= DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("SELECT COUNT(idMessage) AS idMessage FROM Message WHERE idSujet=?");
+        $state->bindParam(1,$idSujet);
+        $state->execute();
+        $Count=$state->fetchAll();
+        $total=$Count[0]["idMessage"];
+        $pages=ceil($total/5);
+        return $pages;
+    }
+
     public static function InsertMessage($MesssageE)
     {
         $connex= DatabaseLinkers::getconnexion();
