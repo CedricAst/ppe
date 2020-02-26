@@ -91,7 +91,21 @@ $test=1;
                   ?>
                     <form class="" method="POST" action="modifSM.php">
                         <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
-                        <input type="hidden" name="Action" value="0">
+                        <input type="hidden" name="Action" value="1">
+                        <input  class="button" type="submit" value="Modifier"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
+                 <div class="action">
+                  <?php if($test != $Users->getidProfile())
+                  {
+                  ?>
+                    <form class="" method="POST" action="modifSM.php">
+                        <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
+                        <input type="hidden" name="idProfile" value="<?php echo $Users->getidProfile(); ?>"
+                        <input type="hidden" name="Action" value="2">
                         <input  class="button" type="submit" value="Modifier"/>
                     </form>
                     <?php
@@ -154,6 +168,21 @@ $test=1;
                   }
                     ?>
                 </div>
+                <div class="action">
+                  <?php if($test != $listMessage[$cpt]->getIdProfile())
+                  {
+                  ?>
+                    <form class="" method="POST" action="modifSM.php">
+                        <input type="hidden" name="idMessage" value="<?php echo $listMessage[$cpt]->getIdMessage() ?>">
+                        <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
+                        <input type="hidden" name="idProfile" value="2">
+                        <input type="hidden" name="Action" value="3">
+                        <input  class="button" type="submit" value="Répondre"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
             </div>
             <div class="block-generail-text">
                 <div class ="zonetexte">
@@ -168,7 +197,7 @@ $test=1;
         <input type="hidden" name="idSujet" value="<?php echo $Sujet->getIdSujet(); ?>">
         <input type="hidden" name="idProfile" value="2">
          <input type="hidden" name="Action" value="0">
-         <textarea class="commentarea" name="content" placeholder="Votre commentaire"><?php echo $Sujet->getText() ?></textarea>
+         <textarea class="commentarea" name="content" placeholder="Votre commentaire"><blockquote><?php echo $Sujet->getText() ?></blockquote></textarea>
         <input  class="button" type="submit" value="Envoyer un Commentaire"/>
         </form>
         </div>

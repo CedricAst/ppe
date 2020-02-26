@@ -38,7 +38,44 @@ switch ($Action)
             CKEDITOR.replace('content');
         </script>
         <?php
-    break;
+            break;
+    case 2:
+       $idSujet=$_POST["idSujet"];
+       $idProfile=$_POST["idProfile"];
+       $Sujet=SujetManager::findSujet($idSujet);
+       ?><h1><?php echo $Sujet->getNomSujet()  ?></h1>
+        <form class="" method="POST" action="insertCommentaire.php">
+       <input type="hidden" name="idSujet" value="<?php echo $idSujet ?>">
+       <input type="hidden" name="idProfile" value="<?php echo $idProfile ?>">
+       <input type="hidden" name="Action" value="0">
+       <textarea class="" name="content" placeholder="Votre commentaire"><blockquote><?php echo $Sujet->getText() ?></blockquote></textarea>
+       <input  class="" type="submit" value="Répondre au  Sujet"/>
+       </form>
+        <script src="ckeditor/ckeditor.js"></script>
+       <script>
+           CKEDITOR.replace('content');
+       </script>
+       <?php
+               break;
+    case 3:
+       $idMessage=$_POST["idMessage"];
+       $idSujet=$_POST["idSujet"];
+       $idProfile=$_POST["idProfile"];
+       $Message=MessageManager::findMessage($idMessage);
+       ?>
+        <form class="" method="POST" action="insertCommentaire.php">
+       <input type="hidden" name="idSujet" value="<?php echo $idSujet ?>">
+       <input type="hidden" name="idProfile" value="<?php echo $idProfile ?>">
+       <input type="hidden" name="Action" value="0">
+       <textarea class="" name="content" placeholder="Votre commentaire"><blockquote><?php echo $Message->getText() ?></blockquote></textarea>
+       <input  class="" type="submit" value="Répondre au Message"/>
+       </form>
+        <script src="ckeditor/ckeditor.js"></script>
+       <script>
+           CKEDITOR.replace('content');
+       </script>
+       <?php
+               break;
 }
 ?>
 
