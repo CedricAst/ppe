@@ -92,6 +92,7 @@
     padding: 13px 0px;
     overflow: hidden;
     word-break:inherit;
+    flex-direction: column;
 }
 
 /*

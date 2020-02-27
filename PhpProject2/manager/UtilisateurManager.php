@@ -82,4 +82,18 @@ class UtilisateurManager {
         
                 
     }
+    public static function UpdateUser($User)
+    {
+      $pseudo=$User->getpseudo();
+      $MDP=$User->getMDP();
+      $URLimageProfile=$User->getURLimageProfile();
+      $idProfile=$User->getidProfile();
+      $connex= DatabaseLinkers::getconnexion();
+      $state=$connex->prepare("UPDATE Utilisateur SET pseudo=?,MDP=?,URLimageProfile=? WHERE idProfile=?");
+      $state->bindParam(1,$pseudo);
+      $state->bindParam(2,$MDP);
+      $state->bindParam(3,$URLimageProfile);
+      $state->bindParam(4,$idProfile);
+      $state->execute();  
+    }
 }

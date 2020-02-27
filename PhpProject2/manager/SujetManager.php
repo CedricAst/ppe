@@ -51,6 +51,21 @@ class SujetManager {
         }
         return $listSujet;
     }
+    public static function findAllSujettoUser($idProfile)
+    {
+        $listSujet=array();
+        $connex= DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("SELECT * FROM Sujet WHERE idProfile=?");
+        $state->bindParam(1,$idProfile);
+        $state->execute();
+        $resultas=$state->fetchAll();
+        foreach($resultas as $lineresultas)
+        {
+             $Sujet= SujetManager::findSujet($lineresultas["idSujet"]);
+             $listSujet[]=$Sujet;
+        }
+        return $listSujet;
+    }
     public static function insertSujet($Sujetinsert)
     {
          $connex= DatabaseLinkers::getconnexion();

@@ -58,6 +58,21 @@ class MessageManager {
         $pages=ceil($total/5);
         return $pages;
     }
+    public static function findMessagetoUser($idProfile)
+    {
+        $listMessage=array();
+        $connex= DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("SELECT * FROM Message WHERE idProfile=?");
+        $state->bindParam(1,$idProfile);
+        $state->execute();
+        $resultas=$state->fetchAll();
+        foreach($resultas as $lineresultas)
+        {
+             $Message= MessageManager::findMessage($lineresultas["idMessage"]);
+             $listMessage[]=$Message;
+        }
+        return $listMessage;
+    }
 
     public static function InsertMessage($MesssageE)
     {
