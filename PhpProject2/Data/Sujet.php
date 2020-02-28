@@ -1,14 +1,25 @@
 <?php
 class Sujet
 {
-	private $idSujet;
-	private $nomSujet;
-	private $likeSujet;
-	private $dislikeSujet;
-	private $text;
-	private $URL;
-        private $idProfile;    
-	    function getIdSujet() {
+    private $idSujet;
+    private $nomSujet;
+    private $likeSujet;
+    private $dislikeSujet;
+    private $text;
+    private $URL;
+    private $idProfile;  
+    private $DateCreationS;
+    
+    public function getDateCreationS() {
+        return $this->DateCreationS;
+    }
+
+    public function setDateCreationS($DateCreationS) {
+        $this->DateCreationS = $DateCreationS;
+    }
+
+            
+    function getIdSujet() {
         return $this->idSujet;
     }
 

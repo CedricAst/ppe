@@ -28,6 +28,7 @@ class MessageManager {
         $Message->setLikeMessage($resultasMessage["likeMessage"]);
         $Message->setDislikeMessage($resultasMessage["dislikeMessage"]);
         $Message->setURLimage($resultasMessage["URLimage"]);
+        $Message->setDateCreationM($resultasMessage["DateCreationM"]);
         $Message->setIdSujet($resultasMessage["idSujet"]);
         $Message->setIdProfile($resultasMessage["idProfile"]);
         return $Message;   

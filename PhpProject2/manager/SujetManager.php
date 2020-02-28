@@ -34,6 +34,7 @@ class SujetManager {
         $Sujet->setLikeSujet($resultasSujet["likeSujet"]);
         $Sujet->setDislikeSujet($resultasSujet["dislikeSujet"]);
         $Sujet->setText($resultasSujet["text"]);
+        $Sujet->setDateCreationS($resultasSujet["DateCreationS"]);
         }
         return $Sujet;
     }

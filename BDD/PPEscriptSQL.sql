@@ -15,7 +15,8 @@ idProfile INT NOT NULL AUTO_INCREMENT,
 pseudo VARCHAR(50) UNIQUE,
 MDP VARCHAR(50),
 grade VARCHAR(50),
-URLimageProfile VARCHAR(50),
+URLimageProfile TEXT,
+DateInscription DATE,
 PRIMARY KEY (idProfile)
 
 );
@@ -27,6 +28,7 @@ nomSujet VARCHAR(50),
 likeSujet INT,
 dislikeSujet INT,
 text TEXT,
+DateCreationS DATE,
 idProfile INT,
 PRIMARY KEY (idSujet)
 );
@@ -38,6 +40,7 @@ text TEXT,
 likeMessage INT,
 dislikeMessage INT,
 URLimage VARCHAR(50),
+DateCreationM DATE,
 idSujet INT,
 idProfile INT,
 PRIMARY KEY (idMessage)
@@ -69,10 +72,10 @@ VALUES(1,"test1",10,2,"dum sodales, augue velit cursus nu",1),
 (4,"test4",1340,289,"dum sefuomjksefjsefmjkssjsodales, augue velit cursus nu",3),
 (5,"test5",1093,42,"dum ssduilsdjksdjsdjljlmsdfmjisrfmjilwsdfjklssdfodales, augue velit cursus nu",2);
 
-INSERT INTO Utilisateur(idProfile,pseudo,MDP,grade,URLimageProfile)
-VALUES(1,"CCLR","azerty123","Utlisateur","inconnue"),
-(2,"Mickey","zerty123","Utlisateur","inconnue"),
-(3,"pickwii","123","Utlisateur","inconnue"),
+INSERT INTO Utilisateur(idProfile,pseudo,MDP,grade,URLimageProfile,DateInscription)
+VALUES(1,"CCLR","azerty123","Utlisateur","https://risibank.fr/cache/stickers/d223/22360-full.png","2018-11-27"),
+(2,"Mickey","zerty123","Utlisateur","inconnue","2007-06-12"),
+(3,"pickwii","123","Utlisateur","inconnue","2012-01-28"),
 (4,"EEEEE","EEEEE","Utlisateur","inconnue");
 
 INSERT INTO Message(idMessage,text,likeMessage,dislikeMessage,URLimage,idSujet,idProfile)

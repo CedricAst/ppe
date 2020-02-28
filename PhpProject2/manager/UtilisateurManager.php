@@ -29,6 +29,7 @@ class UtilisateurManager {
         $Utilisateur->setMDP($resultasMessage["MDP"]);
         $Utilisateur->setURLimageProfile($resultasMessage["URLimageProfile"]);
         $Utilisateur->setgrade($resultasMessage["grade"]);
+        $Utilisateur->setDateInscription($resultasMessage["DateInscription"]);
         return $Utilisateur;   
         
     }

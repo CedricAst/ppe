@@ -52,3 +52,10 @@
     flex-direction: column;
     padding: 10px;
 }
+.block-modification
+{
+    display: block;
+    background-color: #607D8B;
+    width: auto;
+    height: auto;
+}

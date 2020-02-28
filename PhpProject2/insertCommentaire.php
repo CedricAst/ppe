@@ -44,5 +44,6 @@ switch ($Action)
         MessageManager::UpdateMessage($MessageA);   
         header('Location: SujetActivity.php');
         exit;
-   
+    case 5:
+        break;
 }

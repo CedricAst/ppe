@@ -8,7 +8,16 @@ class Message
     private $URLimage;
     private $idSujet;
     private $idProfile;
-    function getIdProfile() {
+    private $DateCreationM;
+    public function getDateCreationM() {
+        return $this->DateCreationM;
+    }
+
+    public function setDateCreationM($DateCreationM) {
+        $this->DateCreationM = $DateCreationM;
+    }
+
+        function getIdProfile() {
         return $this->idProfile;
     }
 

@@ -6,8 +6,17 @@ class Utilisateur
     private $MDP;
     private $grade;
     private $URLimageProfile;
-	
-	public function getidProfile()
+    private $DateInscription;
+        
+        public function getDateInscription() {
+            return $this->DateInscription;
+        }
+
+        public function setDateInscription($DateInscription) {
+            $this->DateInscription = $DateInscription;
+        }
+
+    	public function getidProfile()
 	{
 			return $this->_idProfile;
 	}
