@@ -70,8 +70,8 @@ class SujetManager {
     public static function insertSujet($Sujetinsert)
     {
          $connex= DatabaseLinkers::getconnexion();
-        $state=$connex->prepare("INSERT INTO Sujet(nomSujet,likeSujet,dislikeSujet,text,idProfile)
-VALUES(?,?,?,?,?");
+        $state=$connex->prepare("INSERT INTO Sujet(nomSujet,likeSujet,dislikeSujet,text,idProfile,DateCreationS)
+VALUES(?,?,?,?,?,CURDATE())");
          $state->bindParam(1,$Sujetinsert->getNomSujet());
          $state->bindParam(2,$Sujetinsert->getLikeSujet());
          $state->bindParam(3,$Sujetinsert->getDislikeSujet());

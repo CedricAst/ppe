@@ -4,12 +4,18 @@ include_once ("manager/UtilisateurManager.php");
 include_once ("manager/SujetManager.php");
 include_once ("Data/Sujet.php");
 include_once ("manager/MessageManager.php");
+include_once ("manager/BannitManager.php");
 $idProfileS=1;
 $idProfile=isset($_GET["idP"]) ? $_GET["idP"] :$idProfileS;
 $idM=isset($_GET["M"]) ? $_GET["M"] :0;
 $User=UtilisateurManager::findUser($idProfile);
 $listMessage=MessageManager::findMessagetoUser($idProfile);
 $listSujet= SujetManager::findAllSujettoUser($idProfile);
+if(BannitManager::findBannittoidProfile($idProfileS)== TRUE)
+{
+    header('Location: index.php');
+        exit;
+}
 ?>
 
 <html>

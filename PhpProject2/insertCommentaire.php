@@ -72,4 +72,8 @@ switch ($Action)
         $justificarion=$_POST["justification"];
         BannitManager::insertBannit($pseudoBannit,$justificarion,$idProfile);
         break;
+    case 7:
+        $idProfile=$_POST["idProfile"];
+        BannitManager::deban($idProfile);
+        break;
 }

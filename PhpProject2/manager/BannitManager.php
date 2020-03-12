@@ -38,7 +38,7 @@ class BannitManager {
         $resultas=$state->fetchAll();
         foreach($resultas as $lineresultas)
         {
-             $Bannit= BannitManager::findBannit($idBannit);
+             $Bannit= BannitManager::findBannit($lineresultas["idBannit"]);
              $listBannit[]=$Bannit;
         }
         return $listBannit;
@@ -57,7 +57,10 @@ VALUES(?,?,?)");
     }
     public static function deban($idProfile)
     {
-    
+        $connex=DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("DELETE FROM Bannit WHERE idProfile=?");
+        $state->bindParam(1,$idProfile);
+        $state->execute();
     }
     public static function findBannittoidProfile($idProfile)
     {
@@ -68,10 +71,10 @@ VALUES(?,?,?)");
         $resultas=$state->fetchAll();
         if(count($resultas) == 0)
         {
-            return NULL;
+            return FALSE;
         }else
         {
-            
+            return TRUE;
         }
     }
     

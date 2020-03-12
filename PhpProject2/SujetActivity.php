@@ -3,12 +3,14 @@ include_once ("manager/SujetManager.php");
 include_once ("Data/Sujet.php");
 include_once ("manager/MessageManager.php");
 include_once ("manager/UtilisateurManager.php");
+include_once ("manager/BannitManager.php");
 $idSujet=1;
 if(SujetManager::findSujet($idSujet)==NULL)
 {
     header('Location: index.php');
         exit;
 }
+
 $Sujet=SujetManager::findSujet($idSujet);
 $limit=5;
 $page=isset($_GET["page"]) ? $_GET["page"] :1;
@@ -17,6 +19,11 @@ $listMessage= MessageManager::findMessagetoSujet($idSujet,$start,$limit);
 $pages= MessageManager::findMessagetoSujetCount($idSujet);
 $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
 $test=1;
+if(BannitManager::findBannittoidProfile($test)== TRUE)
+{
+    header('Location: index.php');
+        exit;
+}
 $grade="Admin";
 ?>
 <html>

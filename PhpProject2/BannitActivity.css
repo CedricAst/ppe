@@ -1,0 +1,36 @@
+.block-general
+{
+    display: flex;
+    background-color: #4CAF50;
+    width: 800px;
+    height: auto;
+    flex-direction: column;
+    padding: 4px;
+}
+.block-secondaire
+{
+    width: 100%;
+    display: flex;
+    height: auto;
+    background-color: azure;
+    flex-direction: column;
+    padding: 3px;
+}
+.block-pseudo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: bisque;
+}
+.block-justification
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #E91E63;
+}

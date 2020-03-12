@@ -78,8 +78,8 @@ class MessageManager {
     public static function InsertMessage($MesssageE)
     {
         $connex= DatabaseLinkers::getconnexion();
-        $state=$connex->prepare("INSERT INTO Message(text,likeMessage,dislikeMessage,URLimage,idSujet,idProfile)
-VALUES (?,?,?,?,?,?)");
+        $state=$connex->prepare("INSERT INTO Message(text,likeMessage,dislikeMessage,URLimage,idSujet,idProfile,DateCreationM)
+VALUES (?,?,?,?,?,?,CURDATE())");
         $Text=$MesssageE->getText();
         $LikeMessage=$MesssageE->getLikeMessage();
         $DislikeMessage=$MesssageE->getDislikeMessage();
