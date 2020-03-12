@@ -2,6 +2,8 @@
 include_once ("Data/Message.php");
 include_once ("manager/MessageManager.php");
 include_once ("manager/SujetManager.php");
+include_once ("manager/UtilisateurManager.php");
+include_once ("manager/BannitManager.php");
 $Action=$_POST["Action"];
 switch ($Action)
 {
@@ -35,7 +37,7 @@ switch ($Action)
         $SujetA->setNomSujet($_POST["nomSujet"]);
         $SujetA->setText($_POST["content"]);
         SujetManager::UpdateSujet($SujetA);
-        header('Location: SujetAcb tivity.php');
+        header('Location: SujetActivity.php');
         exit;
     case 4:
         $idMessage=$_POST["idMessage"];
@@ -45,5 +47,29 @@ switch ($Action)
         header('Location: SujetActivity.php');
         exit;
     case 5:
+        $idProfile=$_POST["idProfile"];
+        $Profile= UtilisateurManager::findUser($idProfile);
+        $Mdp=$_POST["MDP"];
+        if($Mdp == $Profile->getMDP())
+        {
+            $URLimageProfile=$_POST["URLimageProfile"];
+            $pseudo=$_POST["pseudo"];
+            if(!empty($_POST["newMDP"]))
+            {
+                $newMDP=$_POST["newMDP"];
+                $Profile->setMDP($newMDP);
+            }
+            $Profile->setURLimageProfile($URLimageProfile);
+            $Profile->setpseudo($pseudo);
+            UtilisateurManager::UpdateUser($Profile);
+        }
+        header('Location: ProfileActivity.php');
+        exit;
+    case 6:
+        $idProfile=$_POST["idProfile"];
+        $Bannit=UtilisateurManager::findUser($idProfile);
+        $pseudoBannit=$Bannit->getpseudo();
+        $justificarion=$_POST["justification"];
+        BannitManager::insertBannit($pseudoBannit,$justificarion,$idProfile);
         break;
 }

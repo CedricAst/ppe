@@ -17,7 +17,7 @@ $listMessage= MessageManager::findMessagetoSujet($idSujet,$start,$limit);
 $pages= MessageManager::findMessagetoSujetCount($idSujet);
 $Users= UtilisateurManager::findUser($Sujet->getIdProfile());
 $test=1;
-
+$grade="Admin";
 ?>
 <html>
     <head>
@@ -112,6 +112,19 @@ $test=1;
                   }
                     ?>
                 </div>
+                <div class="action">
+                  <?php if($grade == "Admin")
+                  {
+                  ?>
+                   <form class="" method="POST" action="modifSM.php">
+                       <input type="hidden" name="idProfile" value="<?php echo $Users->getidProfile() ?>">
+                        <input type="hidden" name="Action" value="4">
+                        <input  class="button" type="submit" value="Bannir"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
             </div>
        
             <div class="block-generail-text">
@@ -139,8 +152,8 @@ $test=1;
                     </div>
                 </div>
                 <div class="Pseudo">
-                    <?php 
-                    echo $user->getpseudo(); ?>
+                    <a href="ProfileActivity.php?idP=<?php echo $user->getidProfile() ?>"><?php 
+                    echo $user->getpseudo(); ?></a>
                 </div>
                 <div class="action">
                   <?php if($test == $listMessage[$cpt]->getIdProfile())
@@ -178,6 +191,19 @@ $test=1;
                         <input type="hidden" name="idProfile" value="2">
                         <input type="hidden" name="Action" value="3">
                         <input  class="button" type="submit" value="Répondre"/>
+                    </form>
+                    <?php
+                  }
+                    ?>
+                </div>
+                <div class="action">
+                  <?php if($grade == "Admin")
+                  {
+                  ?>
+                   <form class="" method="POST" action="modifSM.php">
+                       <input type="hidden" name="idProfile" value="<?php echo $Users->getidProfile() ?>">
+                        <input type="hidden" name="Action" value="4">
+                        <input  class="button" type="submit" value="Bannir"/>
                     </form>
                     <?php
                   }

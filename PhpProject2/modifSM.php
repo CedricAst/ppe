@@ -76,6 +76,21 @@ switch ($Action)
        </script>
        <?php
                break;
+    case 4:
+        $idProfile=$_POST["idProfile"];
+        ?>
+         <form class="" method="POST" action="insertCommentaire.php">
+       <input type="hidden" name="idProfile" value="<?php echo $idProfile ?>">
+       <input type="hidden" name="Action" value="6">
+       <textarea class="" name="justification" placeholder="Votre commentaire"></textarea>
+       <input  class="" type="submit" value="Bannir"/>
+       </form>
+        <script src="ckeditor/ckeditor.js"></script>
+       <script>
+           CKEDITOR.replace('justification');
+       </script>
+       <?php
+        break;
 }
 ?>
 

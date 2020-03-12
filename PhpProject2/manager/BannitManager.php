@@ -43,13 +43,13 @@ class BannitManager {
         }
         return $listBannit;
     }
-    public static function insertBannit($Banniinsert){
+    public static function insertBannit($_pseudoBannit,$_justification,$_idProfile){
         $connex= DatabaseLinkers::getconnexion();
         $state=$connex->prepare("INSERT INTO Bannit(pseudoBannit,justification,idProfile)
-VALUES(?,?,?");
-        $pseudoBannit=$Banniinsert->getpseudoBannit();
-        $justification=$Banniinsert->getjustification();
-        $idProfile=$Banniinsert->getidProfile();
+VALUES(?,?,?)");
+        $pseudoBannit=$_pseudoBannit;
+        $justification=$_justification;
+        $idProfile=$_idProfile;
          $state->bindParam(1,$pseudoBannit);
          $state->bindParam(2,$justification);
          $state->bindParam(3,$idProfile);
@@ -59,4 +59,20 @@ VALUES(?,?,?");
     {
     
     }
+    public static function findBannittoidProfile($idProfile)
+    {
+        $connex= DatabaseLinkers::getconnexion();
+        $state=$connex->prepare("SELECT * FROM Bannit WHERE idProfile=?");
+        $state->bindParam(1,$idProfile);
+        $state->execute();
+        $resultas=$state->fetchAll();
+        if(count($resultas) == 0)
+        {
+            return NULL;
+        }else
+        {
+            
+        }
+    }
+    
 }
