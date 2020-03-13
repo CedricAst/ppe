@@ -3,25 +3,37 @@ body
     font-family: sans-serif;
     font-size: 17px;
     margin: 0;
-    background: #347adc;
+	background-color: rgb(21, 32, 43);
 }
 
 .page
 {
+<<<<<<< Updated upstream
     background: #13133e ;
+=======
+    background-color: rgb(21, 32, 43);
+>>>>>>> Stashed changes
 }
 
 .filsactu
 {
+<<<<<<< Updated upstream
     background: #white;
+=======
+    background-color: rgb(21, 32, 43);
+>>>>>>> Stashed changes
     height : 100%;
     width: 750px;
     text-align: center;
     margin-left: auto;
     margin-right : auto;
+<<<<<<< Updated upstream
     border : 2px groove white;
     box-shadow: 1px 1px 5px white;
     background: #09091f;
+=======
+    border: 2 black;
+>>>>>>> Stashed changes
 }
 
 .message
@@ -31,7 +43,11 @@ body
     width : 80%;
     margin-left: auto;
     margin-right : auto;
+<<<<<<< Updated upstream
     border: 2px groove black;
+=======
+    border: 2 solid black;
+>>>>>>> Stashed changes
     border-spacing: 5px;
     margin-top : 10px;
     margin-bottom: 8%;

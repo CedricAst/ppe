@@ -3,14 +3,9 @@
 <?php
 	session_start();
 	$page="index";
-
-		    include("header.php");
-
-
-
+	include("header.php");
 ?>
 <html>
-
     <body>
         <div class="page"> 
             <div class="filsactu">
@@ -26,12 +21,8 @@
                 </div>
             </div>
         </div>
-        <?php
-        ?>
     </body>
 </html>
 <?php
-
-    include("footer.php");
-	
+    include("footer.php");	
 ?>
