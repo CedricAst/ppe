@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+    include_once("SujetManager.php");
+    $tab=SujetManager:: findAllSujet();
+    
+?>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,59 +38,42 @@
                 </div>
             </div>
             <div class="filsactu">
-                <div class="container-blocks">
-                    <div class="input">
-                        <label> 
-							
-							<form action="authenticate.php" method="post">
-							<label for="MDP">
-							<i class="fas fa-lock"></i>
-							</label>
-							<input type="text" name="MDP" placeholder="Rechercher" id="Rechercher" required>
-							<label>
-							<input type="submit" value="Rechercher">
-							</label>	
-							</form>
-
-
-
-						</label>
-                    </div>
+                <div class="recherche">
+                    <input class="input-recherche" type="text" name="MDP" placeholder="Rechercher" id="Rechercher" required>                  
+                    <input class="button-recherche" style="vertical-align:middle" type="submit" value="Rechercher">
                 </div>
+                <?php                                  
+                    for ($compteur =0; $compteur<sizeof($tab); $compteur++)
+                    {  ?> 
                 <div class="message">                       
                     <div class="container-blocks">
                         <div class="useraccount">                                                                  
                             <div class="container">
-                                <div class="imageaccount">                      
+                                <div class="imageaccount">   
+                                    <?php  echo $tab[$compteur]->getURL();?>
                                 </div>
                                 <label> pseudo </label>
                                 <label> Inscrit(e) le : </label>
                                 <div class="stat">
-                                    <label> vue :  </label>
+                                    <label> Like :<?php  echo $tab[$compteur]->getLikeSujet () ?> </label>                                          
+                                    <label> Dislike :<?php  echo $tab[$compteur]->getDislikeSujet () ?> </label>
                                 </div>
                             </div>                               
                         </div>
                         <div class="text">  
-						<label>
-							
-							
-						</label>
+                            <div class="sujet">  
+                                        <?php  echo $tab[$compteur]->getNomSujet () ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="message">  
-                    <label> message </label>
-                </div>
-                <div class="message">  
-                    <label> message </label>
-                </div>
+                 <?php
+                    }
+                ?>
             </div>
         </div>
         <div class="footer">
-            <div class="container-blocks">
                 <div>© 2020 Redout</div>  
-                <div>redout@gmail.com</div> 
-            </div>
         </div>
     </body>
 </html>

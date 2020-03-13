@@ -8,7 +8,7 @@ class Sujet
 	private $text;
 	private $URL;
         private $idProfile;    
-	    function getIdSujet() {
+        function getIdSujet() {
         return $this->idSujet;
     }
 

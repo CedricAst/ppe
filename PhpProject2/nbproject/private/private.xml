@@ -3,27 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/BannitActivity.css</file>
+            <file>file:/C:/wamp64/www/ppe/PhpProject2/Data/Utilisateur.php</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/insertCommentaire.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/Data/Banni.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/ProfileActivity.css</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/DatabaseLinkers.php</file>
+            <file>file:/C:/wamp64/www/ppe/PhpProject2/Profile.php</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/Data/Message.php</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/manager/BannitManager.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/ckeditor/config.js</file>
+            <file>file:/C:/wamp64/www/ppe/PhpProject2/SujetActivity.php</file>
+            <file>file:/C:/wamp64/www/ppe/PhpProject2/index.css</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/manager/SujetManager.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/BannitActivity.php</file>
+            <file>file:/C:/wamp64/www/ppe/PhpProject2/manager/MessageManager.php</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/Data/Sujet.php</file>
             <file>file:/C:/wamp64/www/ppe/PhpProject2/manager/UtilisateurManager.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/index.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/Data/Utilisateur.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/modifSM.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/ProfileActivity.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/SujetActivity.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/ckeditor/skins/moono-dark/editor_ie7.css</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/index.css</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/manager/MessageManager.php</file>
-            <file>file:/C:/wamp64/www/ppe/PhpProject2/Connexion.php</file>
         </group>
     </open-files>
 </project-private>

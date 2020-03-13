@@ -8,73 +8,91 @@ body
 
 .page
 {
-    background: black;
+    background: #13133e ;
 }
 
 .filsactu
 {
-    background: blue;
+    background: #white;
     height : 100%;
     width: 750px;
     text-align: center;
     margin-left: auto;
     margin-right : auto;
-    border : 1px groove black;
+    border : 2px groove white;
+    box-shadow: 1px 1px 5px white;
+    background: #09091f;
 }
 
 .message
 {
-    background-color: white;
+    background-color: #1f242b;
     height : 250px;
     width : 80%;
     margin-left: auto;
     margin-right : auto;
-    border: 1px groove black;
+    border: 2px groove black;
     border-spacing: 5px;
     margin-top : 10px;
     margin-bottom: 8%;
+    background: #1f242b;
 }
 
 .useraccount
 {
     text-align: left;
-    border : 1px groove black;
     width : 20%;
     height : 210px;
     margin-bottom : 3%;
     margin-top : 3%;
-    margin-left : 2%;
+    margin-left : auto;
+    margin-right : auto;
     position : relative;
+    border: 1px groove white;
+    text-decoration-color: white;
+    background-color: #1f242b;
+    color: #FFFFFF;
 }
 
 .stat 
 {
     text-align: center;
-    border : 1px groove black;
+    border : 0.5px groove white;
     width : 100%;
     position:absolute; bottom:0;
+    color: #FFFFFF;
 }
 
 .imageaccount
 {
-    border : 1px groove black;
+    border : 0.5px groove white;
     height : 60px;
 }
 
 .text 
 {
     text-align: center;
-    border : 1px groove black;
+    border : 1px groove white;
     width : 70%;
     height : 210px;
     margin-bottom : 3%;
     margin-top : 3%;
-    margin-left : 2%;
+    background-color: #1f242b;
+    margin-left : auto;
+    margin-right : auto;
+    color: #FFFFFF;
 }
 
 .container-blocks
 {
     display: flex;
+    border : 1px groove white;
+}
+
+.input
+{
+    display: inline-flex;
+    flex-direction : row;
 }
 
 .container
@@ -93,16 +111,68 @@ body
     margin-top : 5%;
 }
 
-.search 
+
+
+.recherche
 {
-    text-algin : center;
-    margin-left : 10%;
-    width : 15%;
-    height : 5%;
-    background-color: #9b9494;
-    border : 1px groove black;
-    margin-bottom: 1%;
-    margin-left : 10px;
-    margin-top: 5%;
+    justify-content : space-around;
+    background-color: #1f242b;
+    height : 60px;
+    display: flex;
+    align-items : center;
+    box-shadow: 1px 1px 5px white;
+    margin-bottom: 50px;
 }
 
+.input-recherche
+{
+    width: 338px;
+}
+
+.button_recherche
+{
+    
+}
+
+.button-recherche 
+{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1f242b
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  height : 30px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-recherche span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-recherche span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-recherche :hover span 
+{
+  padding-right: 25px;
+}
+
+.button-recherche :hover span:after 
+{
+  opacity: 1;
+  right: 0;
+}
